@@ -1,9 +1,5 @@
 export const links = [
   {
-    to: "#home",
-    name: "Home",
-  },
-  {
     to: "#plans",
     name: "Plans",
   },

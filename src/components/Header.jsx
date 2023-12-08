@@ -32,20 +32,23 @@ const Header = () => {
 
   return (
     <div>
-      <div className="flex md:fixed md:px-32 px-5 py-3 gap-16 z-50 justify-between md:justify-start w-full transition-all duration-300" style={{ backgroundColor: headerBackground }}>
-        <div className="flex items-center p-2">
+      <div
+        className="fixed md:px-32 px-5 py-3 gap-16 z-50 w-full transition-all duration-300"
+        style={{ backgroundColor: headerBackground }}
+      >
+        <div className="flex items-center p-2 justify-between md:justify-start gap-5">
           <Link to="#home" spy smooth duration={500}>
-            <h1 className="font-semibold text-3xl text-brightRed cursor-pointer">
+            <h1 className="font-semibold text-2xl text-brightRed cursor-pointer">
               FitZone
             </h1>
           </Link>
-        </div>
-        <Navbar />
-        <div className="md:hidden flex items-center" onClick={handleClick}>
-          <AiOutlineMenu className="cursor-pointer" size={28} />
+          <Navbar />
+          <div className="md:hidden flex items-center" onClick={handleClick}>
+            <AiOutlineMenu className="cursor-pointer" size={28} />
+          </div>
+          <MobileNavbar menu={menu} handleClick={handleClick} />
         </div>
       </div>
-      <MobileNavbar menu={menu} handleClick={handleClick} />
     </div>
   );
 };
